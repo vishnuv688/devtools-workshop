@@ -3,12 +3,11 @@
   "version": "1.0.0",
   "private": true,
   "type": "module",
-  "description": "Try WebdriverIO DevTools on a small app with planted bugs, in live mode and trace mode.",
+  "description": "Try WebdriverIO DevTools in live mode and trace mode on the-internet login page.",
   "engines": {
     "node": ">=22.23.4 <23 || >=24.22.1 <25 || >=26.12.1"
   },
   "scripts": {
-    "app": "node app/server.mjs",
     "demo": "wdio run wdio.conf.ts",
     "demo:trace": "wdio run wdio.trace.conf.ts",
     "show-trace": "show-trace"

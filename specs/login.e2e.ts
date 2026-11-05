@@ -1,11 +1,21 @@
 import { expect } from '@wdio/globals'
 
-describe('login', () => {
-  it('signs in and lands on the dashboard', async () => {
+describe('Login', () => {
+  it('logs into the secure area with valid credentials', async () => {
+    console.log('[TEST] logging in with valid credentials')
     await browser.url('/login')
-    await $('#username').setValue('ada')
-    await $('#password').setValue('analytical-engine')
-    await $('#login').click()
-    await expect(browser).toHaveUrl(expect.stringContaining('/dashboard'))
+    await $('#username').setValue('tomsmith')
+    await $('#password').setValue('SuperSecretPassword!')
+    await $('button[type="submit"]').click()
+    await expect($('#flash')).toHaveText(expect.stringContaining('You logged into a secure area!'))
+  })
+
+  it('shows an error for an invalid username', async () => {
+    console.log('[TEST] logging in with an invalid username')
+    await browser.url('/login')
+    await $('#username').setValue('foobar')
+    await $('#password').setValue('barfoo')
+    await $('button[type="submit"]').click()
+    await expect($('#flash')).toHaveText(expect.stringContaining('Your username is invalid!'))
   })
 })
