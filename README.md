@@ -57,6 +57,12 @@ Try:
 
 The only difference from live mode is `mode: 'trace'` in `wdio.trace.conf.ts`.
 
+To run without a visible Chrome window, which is also much faster, set `HEADLESS=1`:
+
+```sh
+HEADLESS=1 npm run demo:trace
+```
+
 ## The tests
 
 | Spec | What it checks | Result |
