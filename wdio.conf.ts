@@ -9,7 +9,7 @@ export const config: WebdriverIO.Config = {
       browserName: 'chrome',
       'goog:chromeOptions': {
         args: [
-          ...(process.env.HEADLESS ? ['--headless=new'] : []),
+          ...(process.env.HEADED ? [] : ['--headless=new']),
           '--window-size=1280,900',
           // Stops Chrome's password-leak check from blocking input after the login form is submitted.
           '--host-resolver-rules=MAP passwordsleakcheck-pa.googleapis.com 127.0.0.1'

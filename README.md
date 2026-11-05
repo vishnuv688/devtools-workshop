@@ -57,10 +57,10 @@ Try:
 
 The only difference from live mode is `mode: 'trace'` in `wdio.trace.conf.ts`.
 
-To run without a visible Chrome window, which is also much faster, set `HEADLESS=1`:
+Chrome runs headless, so you never see the browser being tested; the dashboard and the trace player show it instead. To watch the browser itself, set `HEADED=1`:
 
 ```sh
-HEADLESS=1 npm run demo:trace
+HEADED=1 npm run demo
 ```
 
 ## The tests
